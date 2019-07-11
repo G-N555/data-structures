@@ -9,7 +9,24 @@ class Tree {
     this.children.push(newTree);
   }
 
-  contains(value) {}
+  contains(value) {
+    let result = false;
+    const recurse = (node) => {
+      if (node.value === value) {
+        result = true;
+        return;
+      }
+      if (node.children.length > 0) {
+        for (const child of node.children) {
+          // console.log(child);
+          recurse(child);
+        }
+      }
+    };
+    recurse(this);
+    // console.log(this);
+    return result;
+  }
 
   /*
 +-------------------------+
