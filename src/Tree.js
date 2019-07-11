@@ -18,13 +18,11 @@ class Tree {
       }
       if (node.children.length > 0) {
         for (const child of node.children) {
-          // console.log(child);
           recurse(child);
         }
       }
     };
     recurse(this);
-    // console.log(this);
     return result;
   }
 
