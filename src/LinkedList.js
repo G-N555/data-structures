@@ -11,7 +11,14 @@ class LinkedList {
     }
   }
 
-  appendToTail(value) {}
+  appendToTail(value) {
+    const newNode = new Node(value);
+    if (this.head === undefined) {
+      this.head = newNode;
+    }
+    this.tail = newNode;
+    return newNode;
+  }
 
   removeHead() {}
 
