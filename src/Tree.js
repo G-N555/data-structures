@@ -4,7 +4,10 @@ class Tree {
     this.children = [];
   }
 
-  addChild(value) {}
+  addChild(value) {
+    const newTree = new Tree(value);
+    this.children.push(newTree);
+  }
 
   contains(value) {}
 
@@ -31,3 +34,5 @@ requirements for ALL data structures in this exercise.
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+
+module.exports = Tree;
