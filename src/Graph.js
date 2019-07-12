@@ -19,6 +19,19 @@ class Graph {
   contains(value) {
     return !!this.nodes[value];
   }
+
+  addEdge(vert1, vert2) {
+    if (!this.nodes[vert1] || !this.nodes[vert2]) {
+      return "Invalid node value";
+    }
+    if (
+      !this.nodes[vert1].includes(vert2) &&
+      !this.nodes[vert2].includes(vert1)
+    ) {
+      this.nodes[vert1].push(vert2);
+      this.nodes[vert2].push(vert1);
+    }
+  }
 }
 
 module.exports = Graph;
