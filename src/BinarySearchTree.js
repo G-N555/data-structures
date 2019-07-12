@@ -31,7 +31,6 @@ class BinarySearchTree {
 
   contains(target) {
     let result = false;
-
     const recurse = (node) => {
       if (target === node.value) {
         result = true;
@@ -53,6 +52,31 @@ class BinarySearchTree {
     };
     recurse(this);
     return result;
+  }
+
+  traverseDepthFirstInOrder(func) {
+    const record = {};
+    const recurse = (node) => {
+      if (node.left) {
+        recurse(node.left);
+      }
+
+      if (node.left && record[node.left.value]) {
+        record[node.value] = node.value;
+        func(node);
+        if (node.right) {
+          recurse(node.right);
+        }
+      }
+
+      if (!record[node.value]) {
+        record[node.value] = node.value;
+        func(node);
+        return;
+      }
+      return;
+    };
+    recurse(this);
   }
 }
 
