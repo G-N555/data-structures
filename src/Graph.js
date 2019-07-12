@@ -14,6 +14,12 @@ class Graph {
 
   removeNode(value) {
     delete this.nodes[value];
+    for (const key in this.nodes) {
+      if (this.nodes[key].includes(value)) {
+        let index = this.nodes[key].indexOf(value);
+        this.nodes[key].splice(index, 1);
+      }
+    }
   }
 
   contains(value) {
@@ -31,6 +37,13 @@ class Graph {
       this.nodes[vert1].push(vert2);
       this.nodes[vert2].push(vert1);
     }
+  }
+
+  removeEdge(vert1, vert2) {
+    let index1 = this.nodes[vert1].indexOf(vert2);
+    this.nodes[vert1].splice(index1, 1);
+    let index2 = this.nodes[vert2].indexOf(vert1);
+    this.nodes[vert2].splice(index2, 1);
   }
 }
 
