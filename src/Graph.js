@@ -45,6 +45,16 @@ class Graph {
     let index2 = this.nodes[vert2].indexOf(vert1);
     this.nodes[vert2].splice(index2, 1);
   }
+
+  hasEdge(vert1, vert2) {
+    if (
+      this.nodes[vert1].includes(vert2) &&
+      this.nodes[vert2].includes(vert1)
+    ) {
+      return true;
+    }
+    return false;
+  }
 }
 
 module.exports = Graph;
