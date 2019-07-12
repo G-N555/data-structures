@@ -63,6 +63,18 @@ describe("Trees", () => {
     });
   });
 
+  describe.only("The remove method", () => {
+    const newTree = new Tree(1);
+    it("should remove and return the value", () => {
+      newTree.addChild(2);
+      newTree.addChild(3);
+      newTree.children[0].addChild(7);
+      newTree.children[1].addChild(5);
+      expect(newTree.children[0].remove()).to.equal(2);
+      expect(newTree.contains(7)).to.equal(false);
+    });
+  });
+
   /*
 +-------------------------+
 | Advanced Requirements!! |

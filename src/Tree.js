@@ -26,6 +26,8 @@ class Tree {
     return result;
   }
 
+  remove() {}
+
   /*
 +-------------------------+
 | Advanced Requirements!! |
