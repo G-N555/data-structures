@@ -28,6 +28,32 @@ class BinarySearchTree {
     recurse(this);
     return this;
   }
+
+  contains(target) {
+    let result = false;
+
+    const recurse = (node) => {
+      if (target === node.value) {
+        result = true;
+        return result;
+      }
+      if (target > node.value) {
+        if (node.right === null) {
+          return result;
+        } else {
+          recurse(node.right);
+        }
+      } else {
+        if (node.left === null) {
+          return result;
+        } else {
+          recurse(node.left);
+        }
+      }
+    };
+    recurse(this);
+    return result;
+  }
 }
 
 module.exports = BinarySearchTree;
