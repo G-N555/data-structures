@@ -60,7 +60,6 @@ class BinarySearchTree {
       if (node.left) {
         recurse(node.left);
       }
-
       if (node.left && record[node.left.value]) {
         record[node.value] = node.value;
         func(node);
@@ -68,7 +67,6 @@ class BinarySearchTree {
           recurse(node.right);
         }
       }
-
       if (!record[node.value]) {
         record[node.value] = node.value;
         func(node);

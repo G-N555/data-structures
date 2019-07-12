@@ -7,7 +7,21 @@ class Graph {
      */
     this.nodes = {}; // Adjacency List
   }
+
+  addNode(value) {
+    this.nodes[value] = [];
+  }
+
+  removeNode(value) {
+    delete this.nodes[value];
+  }
+
+  contains(value) {
+    return !!this.nodes[value];
+  }
 }
+
+module.exports = Graph;
 
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
